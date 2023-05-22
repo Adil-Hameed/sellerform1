@@ -21,7 +21,7 @@ export default function AdditionalComment() {
                 </p>
 
                 <label className='check-box-parent mb-3'>
-                    <input type="radio" name='78' defaultChecked />
+                    <input type="radio" name='78' />
                     <span className=''>Less than 3 months</span>
                 </label>
 
@@ -51,7 +51,7 @@ export default function AdditionalComment() {
                 </p>
 
                 <label className='check-box-parent mb-3'>
-                    <input type="radio" name='me' defaultChecked />
+                    <input type="radio" name='me' />
                     <span className=''>Me</span>
                 </label>
 
