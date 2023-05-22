@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function ChooseOption() {
+
+    const [selectedOption, setSelectedOption] = useState('');
+
+    const handleOptionClick = (option) => {
+        setSelectedOption(option);
+    };
     return (
 
         <div className='container-fluid'>
@@ -16,7 +22,11 @@ export default function ChooseOption() {
 
                 </div>
                 <div className='col-6 mt-5 d-flex justify-content-end'>
-                    <div className='light-green rounded option-card d-flex justify-content-center align-items-center flex-column pointer'>
+                    <div
+                        className={`rounded option-card d-flex justify-content-center align-items-center flex-column pointer ${selectedOption === 'stay' ? 'light-green ' : 'bg-white'}`}
+                        onClick={() => handleOptionClick('stay')}
+                    >
+
                         <img src='/asset/ICONS S2R-07 3.svg' className='img-fluid' alt='' />
                         <p className='dark-blue-text fw-bold fs-26 mb-0'>
                             Sell and Stay
@@ -26,7 +36,13 @@ export default function ChooseOption() {
                 </div>
 
                 <div className='col-6 mt-5 d-flex justify-content-start'>
-                    <div className='bg-white rounded option-card d-flex justify-content-center align-items-center flex-column pointer'>
+
+                    <div
+                        className={`rounded option-card d-flex justify-content-center align-items-center flex-column pointer ${selectedOption === 'move' ? 'light-green  ' : 'bg-white'}`}
+
+                        onClick={() => handleOptionClick('move')}
+                    >
+
                         <img src='/asset/ICONS S2R-24.svg' className='img-fluid' alt='' />
                         <p className='dark-blue-text fw-bold fs-26 mb-0'>
                             Sell and Move Out
