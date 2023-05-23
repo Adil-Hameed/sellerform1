@@ -9,11 +9,12 @@ export default function LeaseTerm() {
         setValue(e.target.value)
     }
     const handlevalue = (value) => {
-        // return `$${value}`
         if (value === 10000) {
             const thousandValue = (value / 1000).toFixed(0);
-
             return `$${thousandValue}K`;
+        } else if (value >= 1000) {
+            const formattedValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return `$${formattedValue}`;
         } else {
             return `$${value}`;
         }
@@ -39,11 +40,6 @@ export default function LeaseTerm() {
                 <h3 className='fs-33 fw-bold text-center mb-3 dark-blue-text'>
                     What is your desired lease term?
                 </h3>
-
-                <label className='check-box-parent mb-3'>
-                    <input type="radio" name='year' />
-                    <span className=''>less than 1 year</span>
-                </label>
 
                 <label className='check-box-parent mb-3'>
                     <input type="radio" name='year' />
