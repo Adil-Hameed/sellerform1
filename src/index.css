@@ -454,7 +454,7 @@ h2 {
 
 @media screen and (max-width: 576px) {
   .check-box-parent input[type="radio"]~span {
-    width: 200px;
+    width: 220px;
   }
 }
 
@@ -497,6 +497,13 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   left: 16px;
   top: 20px;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0 !important;
+
 }
 
 .check-box-parent input[type="radio"]:checked~span:before {
