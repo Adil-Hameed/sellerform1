@@ -4,31 +4,27 @@ import RangeSlider from 'react-bootstrap-range-slider';
 
 
 export default function LeaseTerm() {
-    const [value, setValue] = useState(500000);
+    const [value, setValue] = useState(5000);
     const handleChange = (e) => {
         setValue(e.target.value)
     }
     const handlevalue = (value) => {
-        if (value >= 1000000) {
-            const millionValue = (value / 1000000).toFixed(1);
-            return `$${millionValue} M`;
-        } else if (value >= 1000) {
+        // return `$${value}`
+        if (value === 10000) {
             const thousandValue = (value / 1000).toFixed(0);
-            return `$${thousandValue}k`;
+
+            return `$${thousandValue}K`;
         } else {
             return `$${value}`;
         }
     }
 
-    const [value2, setValue2] = useState(500000);
+    const [value2, setValue2] = useState(375000);
     const handleChange2 = (e) => {
         setValue2(e.target.value)
     }
     const handlevalue2 = (value2) => {
-        if (value2 >= 1000000) {
-            const millionValue2 = (value2 / 1000000).toFixed(1);
-            return `$${millionValue2} M`;
-        } else if (value2 >= 1000) {
+        if (value2 >= 1000) {
             const thousandValue2 = (value2 / 1000).toFixed(0);
             return `$${thousandValue2}k`;
         } else {
@@ -72,8 +68,8 @@ export default function LeaseTerm() {
                 </h3>
                 <RangeSlider
                     min={0}
-                    step={5000}
-                    max={1000000}
+                    step={50}
+                    max={10000}
                     tooltip='on'
                     tooltipPlacement="top"
                     value={value}
@@ -85,7 +81,7 @@ export default function LeaseTerm() {
                         $0
                     </p>
                     <p className='mb-0'>
-                        $1M+
+                        $10K
                     </p>
                 </div>
             </div>
@@ -129,8 +125,8 @@ export default function LeaseTerm() {
                 </h3>
                 <RangeSlider
                     min={0}
-                    step={5000}
-                    max={1000000}
+                    step={1000}
+                    max={750000}
                     tooltip='on'
                     tooltipPlacement="top"
                     value={value2}
@@ -142,7 +138,7 @@ export default function LeaseTerm() {
                         $0
                     </p>
                     <p className='mb-0'>
-                        $1M+
+                        $750K
                     </p>
                 </div>
             </div>
