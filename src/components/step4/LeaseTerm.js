@@ -43,6 +43,11 @@ export default function LeaseTerm() {
 
                 <label className='check-box-parent mb-3'>
                     <input type="radio" name='year' />
+                    <span className=''>less than 1 Year</span>
+                </label>
+
+                <label className='check-box-parent mb-3'>
+                    <input type="radio" name='year' />
                     <span className=''>1 Year</span>
                 </label>
 
